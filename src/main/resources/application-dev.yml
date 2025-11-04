@@ -1,0 +1,38 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+
+  jwt:
+    secretKey: ${JWT_SECRET}
+    accessExp: ${ACCESS_EXP}
+    refreshExp: ${REFRESH_EXP}
+    header: ${HEADER}
+    prefix: ${PREFIX}
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.validation: DEBUG
+    org.springframework.http.converter.json: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
