@@ -32,7 +32,8 @@ public class UserEntity {
     private String imageUrl;
 
     @Builder
-    public UserEntity(String accountId, String username, String password, String email,  String imageUrl) {
+    public UserEntity(Long id, String accountId, String username, String password, String email,  String imageUrl) {
+        this.id = id;
         this.accountId = accountId;
         this.username = username;
         this.password = password;
